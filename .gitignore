@@ -11,6 +11,8 @@
 *.DS_Store
 *.log
 *.aux
+*.bbl
+*.blg
 *.dvi
 *.pdf
 *.data

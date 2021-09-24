@@ -1,7 +1,9 @@
 \documentclass[11pt,a4paper]{article}
 
+\usepackage{amsmath}
+
 \begin{document}
-\title{A Paradox, Induction, and Reserch Basics}
+\title{A Paradox, Induction, and Research Basics}
 \author{Daniel Gustafsson}
 \date{September 2021}
 \maketitle
@@ -16,9 +18,34 @@ If such a distance exists the series is no longer infinite and the paradox is no
 
 
 \section{When does induction work?}
+The \textit{Raven Paradox} claims \textit{all ravens are black} and that observing something \textit{not black} that is also \textit{not a raven}
+provides proof in favor of this claim.
 
+In my opinion the paradox is not a paradox, I agree that observing an object that is \textit{not black and not a raven} provides a tiny bit of proof
+that \textit{all ravens are black}. My reasoning for this is that there is a finite set of observable objects, some are black ravens and some are
+non-black non-ravens. If a non-black raven exists it must be in the set of observable objects. Every time an observation is made of a non-black non-raven
+there is one less object in the set of observable objects that could potentially be a non-black raven.
 
+Two identical arrays were sorted, one by quicksort and one by insertion sort. Insertion sort was faster in this scenario,
+therefore insertion sort is the faster then quicksort. This statement is obviously false because quicksort is faster in most cases.
+There could have been any number of similar tests with the same results if the arrays in the tests were always either short or close to being
+sorted already. In this case we are drawing conclusions from past observations much like in Goodman's paradox.
 
-\section{Reserch basics}
-	
+\section{Research basics}
+In a modern research project on artificial intelligence in games, the authors \textit{compares} AI in computer games to the graphics and physics
+of computer games and \textit{evaluates} that AI is or can be an equally important selling point as graphics or physics has been\cite{ai_games}. 
+The authors also states that AI has become the technical core of improving the playability of a game and they \textit{predict} that AI development
+will have a great impact on the future of gaming.
+
+Another interesting study, on current blockchain technology\cite{eth}, \textit{compares} the operating cost of currently used relay schemes and a new
+validate-on-demand pattern that they call ETH Relay. Their conclusions are that their new relay scheme could reduce operating costs by as much as 92\%
+
+Computer science research is mostly conducted with a positivist approach. When inventing a new algorithm to solve some problem, a computer scientist
+will try to prove the validity of the algorithm using mathematical models and quantitative analysis. Examples of this exists everywhere in computer science.
+The way we describe an algorithms time or memory complexity with big O notation is purely mathematical, another example is cryptography which is the base
+of all encryption and cyber security, cryptography is also purely mathematical.
+
+\bibliographystyle{amsplain}
+\bibliography{hw2.bib}
+
 \end{document}
