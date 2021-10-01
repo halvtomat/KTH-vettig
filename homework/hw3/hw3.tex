@@ -1,0 +1,56 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\title{Explanation and causality}
+\author{Daniel Gustafsson}
+\date{September 2021}
+
+\begin{document}
+\maketitle
+
+\section{Two research studies}
+
+\subsection{To comment or not to comment?}
+I do not think that we can draw the conclusion that comments improve code from this study.
+This study is based on a single specific problem, maybe a conclusion could be drawn that for this specific problem
+or this specific type of problem, programmers who uses comments specific to the given style guide writes better programs.
+
+Another problem with the conclusion is that all group A students followed a specific style guide with their comments,
+but the do not specifically state that the comments have to follow that same style guide.
+
+If we want to compare results from two different groups we want the groups to be random, in this case the students
+chose themselves which group to join which causes bias in the results.
+
+We also do not know how many students partook in the study and how many joined each group, the possibility exists that
+there were many students in group A and few in group B which gave group A a bigger chance to produce good programs and
+in term distorting the results.
+
+I suggest that the students are randomly assigned to the groups, provided a set of different problems to solve and students in
+group A are free to choose any style guide for their comments.
+
+\subsection{Java v Haskell}
+I still do not think the given conclusion can be drawn. This study is better than the last in that the students are randomly
+assigned but there is still just one specific problem. The specific problem could very well be much easier to solve using
+object oriented program and thus be biased.
+
+There is also a possibility that the students coursework is largely using Java and rarely using Haskell which also would
+distort the results. The students could simply be more comfortable coding in Java than Haskell.
+
+Another possibility is that Haskell is a slow language and that there are other functional programming languages that run faster,
+maybe even faster than Java (or any object oriented language).
+
+I suggest that the student in the group C can choose any functional language and students in group D can choose any \textit{non}
+functional language. I also suggest that the student write programs to solve a set of different problems.
+
+\section{Zipf's law}
+
+\begin{figure}[h]
+	\input{plot}
+\end{figure}
+
+\bibliographystyle{amsplain}
+\bibliography{hw3.bib}
+
+\end{document}
