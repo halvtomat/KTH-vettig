@@ -2,6 +2,7 @@
 
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{url}
 
 \title{Explanation and causality}
 \author{Daniel Gustafsson}
@@ -46,9 +47,34 @@ functional language. I also suggest that the student write programs to solve a s
 
 \section{Zipf's law}
 
-\begin{figure}[h]
+The dataset \textit{wealth of very rich people}\cite{dataset} was chosen for this assignment.
+The dataset contains data from the Forbes World's Billionaires lists from 1996-2014.
+The first step toward plotting the graph was to limit the dataset to just contain the 2014 data, all unnecessary columns were also removed
+to make the data more manageable. The final dataset contained just two columns, wealth \textit{rank} and total wealth in \textit{billions of USD}.
+All dataset manipulation was done using a simple Python script.
+
+The power curve fitment was done with the maximum likelihood method using the logarithmic values, the result is a straight line on the form $kx+m$.
+The \textit{k} value in this line can be used as exponent in a power curve, the \textit{m} value can be used as coefficient.
+To plot the data and fitted power curve I used Gnuplot.
+
+\begin{figure}[h!]
 	\input{plot}
+	\caption{$f(n) = 383 * n^{-0.781401}$}
 \end{figure}
+
+By the looks of the plot, this dataset fits Zipf's law reasonably well in the lower half of the plot,
+but in the top end of the plot where the richest of the billionaires are, the wealth seems to be more evenly distributed
+than Zipf's law suggests.
+
+After searching Google Scholar for a scientific article using the same dataset, I couldn't find any. I did however find several articles using data from
+Forbes World's Billionaires lists but from other time periods than mine. I chose to explore the article 
+\textit{A statistical evidence of power law distribution in the upper tail of world billionaires data 2010-20}\cite{article}
+which used more recent data from Forbes. In the article the authors came to the conclusion that the billionaires wealth is more evenly 
+distributed than what is suggested by Zipf's law. This coincides well with my findings.
+
+I believe Zipf's law to be a probability distribution. My reasoning for this is that the law can't explain a certain event nor is it proven
+(from what I could find) that the law will hold anywhere, but it does fit well in certain areas such as \textit{frequency of words in a language}
+and can accurately predict and model certain rank-frequency relationships. 
 
 \bibliographystyle{amsplain}
 \bibliography{hw3.bib}

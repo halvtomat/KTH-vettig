@@ -15,6 +15,7 @@
 *.blg
 *.dvi
 *.pdf
+*.eps
 *.data
 
 node_modules/
