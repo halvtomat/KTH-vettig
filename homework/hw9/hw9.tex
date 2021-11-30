@@ -1,0 +1,62 @@
+\documentclass[11pt, a4papaer]{article}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\title{Probability and simulation}
+\author{Daniel Gustafsson}
+\date{November 2021}
+
+\begin{document}
+\maketitle
+
+\section{St. Petersburg paradox}
+
+\textit{What would you yourself be willing to pay to enter the game?}
+
+\vspace{2mm}\noindent
+It depends on the the \textit{maximum amount} I would be able to win.
+If the amount is for example \textit{1 million} SEK, then I would be willing to pay 20 SEK to enter the game.
+I calculated this based on the utility of the game with the following function where x is the resulting
+number of SEK I would be willing to bet.
+
+\[x = log_2(\text{maximum amount})\]
+
+This of course is different if the \textit{maximum amount} is infinite, I would not be willing to pay an infinite
+amount to play the game, I would probably have an upper limit of 370 SEK ($\sim$ 40 USD) just because if I won that game I would
+be at the top of the Forbes list of richest people and I don't think I would ever need more money than that.
+
+\textit{The formulation of the game and the estimate of its value as infinity makes several unrealistic assumptions,
+both from the player's point of view and from the casino's point of view. What are these assumptions?}
+
+\vspace{2mm}\noindent
+The first and most obvious assumption is that the casino can't pay an infinite amount.
+
+\vspace{1mm}\noindent
+The second assumption is that the utility of each ducat is the same. Obviously I (the player) don't have
+an infinite amount of money before the game and adding some ridiculous amount to the already ridiculous highest winning amount
+wouldn't persuade me to risk more of my money now. 
+
+The utility of winning 1 trillion ducats and 3 trillion ducats would be identical but the negative utility of losing x ducats is less
+than the negative utility of losing x + 1 ducats.
+
+\begin{figure}[h]
+	\label{fig:st_petersburg}
+	\centering
+	\caption{Logarithmic plot of average payoff over the last $n$ games as a function of $n$. 28 simulations with $2^x$ games in each 
+	where x is increasing by 1 each simulation.
+	Maximum winnings limited to 10 million.}
+	\input{logplot}
+\end{figure}
+
+\textit{Plot discussion}
+
+\vspace{2mm}\noindent
+The line in \ref{fig:st_petersburg} is obviously converging, I initially though that it was converging towards the expected value, in this case $\sim 23$,
+but it seems to be converging towards half of that value instead. I don't know why this happens.
+
+\section{Hospital visitors}
+
+
+
+\end{document}
