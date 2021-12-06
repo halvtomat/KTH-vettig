@@ -1,0 +1,46 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\title{Statistics and scientific reproducibility}
+\author{Daniel Gustafsson}
+\date{December 2021}
+
+\begin{document}
+\maketitle
+
+\section{Confidence intervals and statistical significance}
+
+I would probably use a confidence interval to present the accuracy 
+of the result. A small confidence interval means that the my results
+are statistically significant and that they can be trusted. 
+
+I could also use a box plot to visualize my findings (like in figure \ref{fig:plot1}).
+In figure \ref{fig:plot1} it is quite obvious that the measured values mostly agree
+with each other and that the mean is $\sim 10$ 
+
+
+\begin{figure}[h]
+	\label{fig:plot1}
+	\centering
+	\caption{Box plot of experiment results}
+	\input{plot1}
+\end{figure}
+
+\vspace{4mm}\noindent
+Figure \ref{fig:plot2} presents the difference in the data sets. Just from looking at the
+figure I would claim the results are consistent with each other.
+
+\[\text{Mean original} = 9.8689, \text{ Mean new} = 9.63796\]
+\[\text{Median original} = 9.921014, \text{ Median new} = 9.757105\]
+
+
+\begin{figure}[h]
+	\label{fig:plot2}
+	\centering
+	\caption{Box plots of the different data sets}
+	\input{plot2}
+\end{figure}
+
+\end{document}
