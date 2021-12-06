@@ -1,7 +1,8 @@
-\documentclass[11pt, a4papaer]{article}
+\documentclass[11pt, a4paper]{article}
 
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{listings}
 
 \title{Probability and simulation}
 \author{Daniel Gustafsson}
@@ -40,13 +41,14 @@ wouldn't persuade me to risk more of my money now.
 The utility of winning 1 trillion ducats and 3 trillion ducats would be identical but the negative utility of losing x ducats is less
 than the negative utility of losing x + 1 ducats.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\label{fig:st_petersburg}
 	\centering
 	\caption{Logarithmic plot of average payoff over the last $n$ games as a function of $n$. 28 simulations with $2^x$ games in each 
 	where x is increasing by 1 each simulation.
 	Maximum winnings limited to 10 million.}
-	\input{logplot}
+	\scriptsize
+	\input{plot1}
 \end{figure}
 
 \textit{Plot discussion}
@@ -55,8 +57,21 @@ than the negative utility of losing x + 1 ducats.
 The line in \ref{fig:st_petersburg} is obviously converging, I initially though that it was converging towards the expected value, in this case $\sim 23$,
 but it seems to be converging towards half of that value instead. I don't know why this happens.
 
+\lstinputlisting[label={lst:sim1}, caption={Simulation 1 code}, language=Python, firstline=9, lastline=39, tabsize=4]{simulation1.py}
 \section{Hospital visitors}
 
+As seen in \ref{fig:hospital}, from 10 simulated years (3650 days), the frequency of days when visitors where 360 or above is practically none. This leads me to suspect that the 
+crowded day with 369 visitors was related to some other cause(s).
+
+\begin{figure}[ht]
+	\label{fig:hospital}
+	\centering
+	\caption{Histogram of visitors per day in the hospital simulation}
+	\scriptsize
+	\input{plot2}
+\end{figure}
+
+\lstinputlisting[label={lst:sim2}, caption={Simulation 2 code}, firstline=7, lastline=22, tabsize=4, language=Python]{simulation2.py}
 
 
 \end{document}

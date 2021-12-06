@@ -21,21 +21,19 @@ def playGame(maximum):
 			break
 	return money
 
-def runSimulation(numberOfRuns, maximum):
-	if numberOfRuns == 0:
+def runSimulation(numberOfGames, maximum):
+	if numberOfGames == 0:
 		return [0, 0]
 	games = []
-	for _ in range(numberOfRuns):
+	for _ in range(numberOfGames):
 		games.append(playGame(maximum))
 	a = np.array(games)
-	return [numberOfRuns, np.mean(a)]
+	return [numberOfGames, np.mean(a)]
 
 def main():
-	if len(sys.argv) < 3:
-		print("Too few arguments!")
 	maximumNumberOfGames = math.ceil(math.log2(int(sys.argv[1])))
 	maximum = int(sys.argv[2])
-	with open('data.csv', 'w') as out:
+	with open('data1.csv', 'w') as out:
 		writer = csv.writer(out)
 		for i in range(0, maximumNumberOfGames):
 			writer.writerow(runSimulation(pow(2,i), maximum))
