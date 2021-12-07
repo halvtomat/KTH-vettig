@@ -18,29 +18,87 @@ are statistically significant and that they can be trusted.
 
 I could also use a box plot to visualize my findings (like in figure \ref{fig:plot1}).
 In figure \ref{fig:plot1} it is quite obvious that the measured values mostly agree
-with each other and that the mean is $\sim 10$ 
+with each other and that the median is $\sim 10$ 
 
 
 \begin{figure}[h]
-	\label{fig:plot1}
 	\centering
 	\caption{Box plot of experiment results}
 	\input{plot1}
+	\label{fig:plot1}
 \end{figure}
 
 \vspace{4mm}\noindent
+\textit{Second data set is introduced}
+
+\vspace{2mm}\noindent
 Figure \ref{fig:plot2} presents the difference in the data sets. Just from looking at the
 figure I would claim the results are consistent with each other.
 
 \[\text{Mean original} = 9.8689, \text{ Mean new} = 9.63796\]
 \[\text{Median original} = 9.921014, \text{ Median new} = 9.757105\]
+\[\text{Variance original} = 2.0353152, \text{ Variance new} = 3.799425\]
 
+From these calculated numbers it is obvious that the new experiment had more varying results.
+To fully understand if the results have a statistically significant difference I would have to
+perform some test (t-test).
 
 \begin{figure}[h]
-	\label{fig:plot2}
 	\centering
 	\caption{Box plots of the different data sets}
 	\input{plot2}
+	\label{fig:plot2}
 \end{figure}
+
+\vspace{4mm}\noindent
+\textit{Third data set is introduced}
+
+\vspace{2mm}\noindent
+In this third data set (plotted in figure \ref{fig:plot3}), the mean and median differ more.
+Most numbers in this set is in the range of $[0,40]$ but there are many numbers outside of this span
+as well.
+In this case I think the median is the better representative of the data because the mean is skewed by
+very far outliers.
+
+Generally I think that the median is the better representative of a data set when there are a lot of
+outlying numbers or when the variance is too big.  
+
+\begin{figure}[h]
+	\label{fig:plot3}
+	\centering
+	\caption{Histogram of experiment results}
+	\input{plot3}
+\end{figure}
+
+\vspace{4mm}\noindent
+\textit{How to calculate confidence interval for median value?}
+
+\vspace{2mm}\noindent
+To calculate the confidence interval for the median value you need the \textit{sample size}, \textit{quantile of interest}
+(usually 0.5 for median) and \textit{z-value} (found in table). 
+
+These values can be used to find the \textbf{indices} of the confidence interval, meaning the true median
+lies in the range between the values at the indices (the data obviously has to be sorted for this to be true).
+
+\section{Reproducibility in research}
+I choose the following article: 
+
+Kevin S. Killourhy and R. Maxion (2009). Comparing anomaly-detection
+algorithms for keystroke dynamics.
+
+\vspace{2mm}\noindent
+I think they provide enough information to reproduce the experiment to some degree but some things will vary.
+
+The authors do not provide the data they collected for further experimenting, they also don't provide the applications
+used to gather the data, they instead just state that they developed an application to prompt users to input a password
+and then the application recorded their input. They also state that they used an external reference clock to generate 
+accurate timestamps for the user input but not further description of this clock or how it generated timestamps is provided.
+
+The algorithm implementations are also not included in the article but references to where the algorithms are described'
+in detail is provided.
+
+I believe the data collection is the biggest obstacle in replicating the study, but I still think a similar experiment with
+similar results is possible with what the authors have provided.
+
 
 \end{document}
