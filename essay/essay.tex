@@ -1,0 +1,45 @@
+\documentclass[10pt, a4paper]{article}
+
+\usepackage{amsmath}
+
+\title{A comparison of algorithms user in traffic control systems}
+\author{Daniel Gustafsson}
+\date{December 2021}
+
+\begin{document}
+\maketitle
+
+\section{Summary}
+The authors have studied and compared the efficiency of different traffic control systems in intersections.
+Three different systems were studied and compared. Firstly a \textit{pretimed} system where the traffic lights
+in the intersection shift based on a fixed timer. Secondly a \textit{deterministic} system where the traffic lights
+are shifted based on sensor data. And thirdly a \textit{machine learning} system which uses \textit{Reinforcement Learning}
+to try and minimize the average squared waiting time of the traffic.
+
+The systems are compared in a single four-way interchange with varied traffic. The scenarios where simulated using SUMO
+(Simulation of Urban MObility) which is a road traffic simulation program. All systems where compared on the ability to
+minimize the average squared waiting time of traffic in the intersection. The pretimed system was tested using three different
+timers, 20, 30 and 40 seconds. A total of 50 different test cases was generated and used to test the different systems.
+The tests where split into four categories of traffic demand, 5\%, 10\%, 15\% and 20\%.
+
+The results show that the deterministic algorithm performed best in all tests followed by the pretimed system with the 20 second
+timer. The machine learning algorithm performed similarly to the pretimed system with the 20 and 30 second timers in all tests
+except the highest demand test (20\%).
+
+The results may not be tied to reality as real sensors may not perform as simulated which could mean significantly lower results
+for the deterministic system. There are also a number of different ways to implement the machine learning algorithm which could
+lead to different results for that system.
+
+In conclusion, the deterministic system is the highest performing in all scenarios assuming perfect sensors. Further, the
+machine learning algorithm does not perform well in high traffic demand situations.
+
+\section{Scientific considerations}
+
+
+\section{Suggestions}
+
+
+\bibliographystyle{amsplain}
+\bibliography{essay.bib}
+
+\end{document}
