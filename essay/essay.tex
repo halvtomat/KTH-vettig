@@ -31,9 +31,42 @@ for the deterministic system. There are also a number of different ways to imple
 lead to different results for that system.
 
 In conclusion, the deterministic system is the highest performing in all scenarios assuming perfect sensors. Further, the
-machine learning algorithm does not perform well in high traffic demand situations.
+machine learning algorithm does not perform well in high traffic demand situations. 
+
+I think the results of this thesis is interesting to anyone who is regularly driving in city traffic. At some intersections it feels
+like you wait forever and it feels nice that some people are trying to solve that problem. Unfortunately I don't think this thesis
+has a solution to traffic problems but at the very least it provides data for further researching.
 
 \section{Scientific considerations}
+In this section I will analyze the thesis with different course subjects in mind.
+\subsection{Conclusions}
+The tests conducted in the thesis are in my opinion too narrow to draw the conclusions that the authors have drawn. In the first conclusion
+they simply state that the deterministic traffic control system is best assuming perfect sensors.
+The tests in the thesis were all performed using the same interchange layout but the drawn conclusion is in the scope of all interchanges.
+Similarly I think that the second conclusion that machine learning algorithms have lower performance than both deterministic and pretimed
+systems in high demand scenarios is also faulty. The authors only tested one specific machine learning algorithm implementation but still
+draw conclusions about all machine learning algorithms.
+
+\subsection{Reproduction}
+To reproduce the study and get the same or similar results I would need the data used to train the machine learning model.
+Without this data, the results could vary significantly. Apart from this I think the study is well described and easily reproducible.
+The fact that the authors have published all code and configurations used on Github makes the reproduction significantly easier.
+
+\subsection{Ethics}
+I find the lack of consideration for pedestrians or cyclist to be a ethical problem with this study. I realize that the addition of pedestrians
+and cyclist would make the study magnitudes more complex but to not consider them would be to marginalize a huge group of people.
+Many cities in the modern society tries to minimize the number of cars on the roads and encourage alternative ways of transportation
+like cycling, walking and public transport. To not take these factors into consideration and instead try to optimize intersections based on
+waiting times for cars is outdated and ethically questionable.
+
+\subsection{Arguments}
+The authors argue in their method chapter that the three different timers in the pretimed algorithm where chosen to resemble reality and to
+be similar to related work. In my own experience, I have observed many traffic lights (in reality) switch state in significantly less than
+20 seconds. I also think that since the results show a linear relationship between the different timers where lower timer equals lower average
+waiting times, there should have been tests to find where this relationship ends and the bottom is reached. I believe the authors might have
+come to different conclusions if the pretimed and learning systems were tested with lower minimum "greentime" (the time the traffic light is green).
+The deterministic system didn't have a minimum greentime like the other systems, maybe the results are just a product of that variable.
+
 
 
 \section{Suggestions}
