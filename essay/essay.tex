@@ -1,8 +1,9 @@
 \documentclass[10pt, a4paper]{article}
 
 \usepackage{amsmath}
+\usepackage{url}
 
-\title{A comparison of algorithms user in traffic control systems}
+\title{A comparison of algorithms used in traffic control systems}
 \author{Daniel Gustafsson}
 \date{December 2021}
 
@@ -37,8 +38,11 @@ I think the results of this thesis is interesting to anyone who is regularly dri
 like you wait forever and it feels nice that some people are trying to solve that problem. Unfortunately I don't think this thesis
 has a solution to traffic problems but at the very least it provides data for further researching.
 
+The thesis in question can be found here\cite{thesis}.
+
 \section{Scientific considerations}
 In this section I will analyze the thesis with different course subjects in mind.
+
 \subsection{Conclusions}
 The tests conducted in the thesis are in my opinion too narrow to draw the conclusions that the authors have drawn. In the first conclusion
 they simply state that the deterministic traffic control system is best assuming perfect sensors.
@@ -59,17 +63,53 @@ Many cities in the modern society tries to minimize the number of cars on the ro
 like cycling, walking and public transport. To not take these factors into consideration and instead try to optimize intersections based on
 waiting times for cars is outdated and ethically questionable.
 
+Another interesting ethical dilemma regarding this thesis is the use of average \textit{squared} waiting times instead of just average waiting times.
+This is used to penalize cases where a few cars have to wait for a long time for the benefit of the many cars.
+From a utilitarians point of view this is not obviously correct, why should the many wait for the few? Would it not be better to always maximize the
+number of cars that has a green light? The authors seem to take a more Deontology-like approach where they consider it a duty of the traffic
+control system to let all cars pass in a reasonable time. 
+
 \subsection{Arguments}
 The authors argue in their method chapter that the three different timers in the pretimed algorithm where chosen to resemble reality and to
 be similar to related work. In my own experience, I have observed many traffic lights (in reality) switch state in significantly less than
 20 seconds. I also think that since the results show a linear relationship between the different timers where lower timer equals lower average
-waiting times, there should have been tests to find where this relationship ends and the bottom is reached. I believe the authors might have
-come to different conclusions if the pretimed and learning systems were tested with lower minimum "greentime" (the time the traffic light is green).
-The deterministic system didn't have a minimum greentime like the other systems, maybe the results are just a product of that variable.
+waiting times, there should have been tests to find where this relationship ends and the bottom is reached.
+Similarly, the machine learning system is forced to stay in a state without switching for at least 20 seconds. This is something they could have
+explored further and I think it would have been interesting to see how the machine learning system would have performed without restraints.
 
-
+I believe the authors might have come to different conclusions if the pretimed and learning systems were tested with lower minimum "greentime"
+(the time the traffic light is green). The deterministic system didn't have a minimum greentime like the other systems, maybe the results are 
+just a product of that variable.
 
 \section{Suggestions}
+In this section I will make suggestions on how the authors could improve their work to qualify for a Masters' thesis.
+I will consider KTH's official goals and criteria for a Masters' thesis\cite{criteria} in all suggestions.
+Additionally I will present some new research in the area and explain how it is relevant to this work.
+
+\subsection{Qualifying for a Masters' thesis}
+I would argue that the conclusions the authors have drawn are too general to be drawn from the results of their study. My suggestion is to
+preferably conduct more experiments in other intersection layouts and other traffic conditions or possibly to narrow down the conclusions
+to better fit the results. The conclusions as they are would in my opinion be in violation of the third goal/criteria for a Masters' thesis.
+
+Another suggestion I have is to conduct some additional experiment on how the greentime effects the average squared waiting time. Since the
+pretimed system was tested with three different greentime configurations and the lower ones got the better results in every test, I think it 
+would be highly relevant to continue lowering the greentime til a limit is reached. This limit should then be the benchmark for the other systems
+to compare to. I also suggest completely removing the minimum greentime from the machine learning system since the point of machine learning is
+to let the algorithm decide its own inner parameters based on observations. To set a minimum for one of these parameters would be to restrain
+the algorithm. This in combination with the fact that the deterministic system didn't have a minimum greentime makes the results of this study
+insignificant. Alternatively, a minimum greentime of 20 seconds could be configured for the deterministic system to make the study fair
+between the different systems. The choice to have different minimum greentime variables for the different systems is in my opinion a violation
+of the third goal/criteria for a Masters' thesis.
+
+The lack of consideration of pedestrians and cyclist is in my opinion in violation to the seventh goal/criteria for a Masters' thesis. I suggest
+the authors either write a paragraph explaining the lack of these considerations or that the goal of the thesis be changed to accommodate for
+pedestrians and cyclist. To change the goal would also mean that the average squared waiting time for the cars wouldn't be sufficient for comparison
+any longer. Safety of unprotected road users needs to be considered and probably prioritized and the minimum greentime needs to be calculated based
+on how long it would take a pedestrian to cross the road safely. This would probably add significant complexity to the work and stray from the original
+purpose, therefore my suggestion is to include a paragraph to explain that the thesis exclusively considers cars and should not be used as reference
+in road planning other scenarios.
+
+\subsection{New research}
 
 
 \bibliographystyle{amsplain}
