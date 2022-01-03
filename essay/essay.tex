@@ -48,7 +48,7 @@ The tests conducted in the thesis are in my opinion too narrow to draw the concl
 they simply state that the deterministic traffic control system is best assuming perfect sensors.
 The tests in the thesis were all performed using the same interchange layout but the drawn conclusion is in the scope of all interchanges.
 Similarly I think that the second conclusion that machine learning algorithms have lower performance than both deterministic and pretimed
-systems in high demand scenarios is also faulty. The authors only tested one specific machine learning algorithm implementation but still
+systems in high demand scenarios is also misleading. The authors only tested one specific machine learning algorithm implementation but still
 draw conclusions about all machine learning algorithms.
 
 \subsection{Reproduction}
@@ -98,8 +98,9 @@ to compare to. I also suggest completely removing the minimum greentime from the
 to let the algorithm decide its own inner parameters based on observations. To set a minimum for one of these parameters would be to restrain
 the algorithm. This in combination with the fact that the deterministic system didn't have a minimum greentime makes the results of this study
 insignificant. Alternatively, a minimum greentime of 20 seconds could be configured for the deterministic system to make the study fair
-between the different systems. The choice to have different minimum greentime variables for the different systems is in my opinion a violation
+between the different systems. The choice to have different minimum greentime variables for the different systems is in my opinion also a violation
 of the third goal/criteria for a Masters' thesis.
+
 
 The lack of consideration of pedestrians and cyclist is in my opinion in violation to the seventh goal/criteria for a Masters' thesis. I suggest
 the authors either write a paragraph explaining the lack of these considerations or that the goal of the thesis be changed to accommodate for
@@ -108,6 +109,16 @@ any longer. Safety of unprotected road users needs to be considered and probably
 on how long it would take a pedestrian to cross the road safely. This would probably add significant complexity to the work and stray from the original
 purpose, therefore my suggestion is to include a paragraph to explain that the thesis exclusively considers cars and should not be used as reference
 in road planning other scenarios.
+\newline
+
+The third goal/criteria for a Masters' thesis:
+
+\textit{``demonstrate an ability to identify, analyze, assess and deal with complex phenomena, issues and situations even with limited information''}.
+\newline
+
+The seventh goal/criteria for a Masters' thesis:
+
+\textit{``demonstrate an ability to make judgments with regard to relevant scientific, social and ethical aspects''}.
 
 \subsection{New research}
 In an article from 2017\cite{marl}, the authors state that most experiments done on using machine learning algorithms in traffic control systems tests Q-learning,
